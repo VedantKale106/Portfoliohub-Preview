@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Shinobi Portfolio</title>
+            </head>
+            <body>
+                
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        :root {
+            --orange: #FF7F2A;
+            --black: #1A1A1A;
+            --leaf-green: #4CAF50;
+            --scroll: #F4D03F;
+        }
+
+        body {
+            background-color: #f5f5f5;
+            color: var(--black);
+            line-height: 1.6;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FF7F2A' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+
+        .scroll-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 2rem;
+            background: #fff;
+            border: 8px solid var(--scroll);
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        header {
+            text-align: center;
+            padding: 2rem 0;
+            background: var(--orange);
+            color: white;
+            border-radius: 5px;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h20v20H0V0zm10 10l10-10v20L10 10zm0 0L0 20V0l10 10z' fill='%23ffffff' fill-opacity='0.1'/%3E%3C/svg%3E");
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            background: white;
+            border-radius: 5px;
+            border-left: 4px solid var(--orange);
+        }
+
+        h2 {
+            color: var(--orange);
+            margin-bottom: 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--scroll);
+        }
+
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .skill-item {
+            background: #f8f8f8;
+            padding: 1rem;
+            border-radius: 5px;
+            text-align: center;
+            border: 2px solid var(--scroll);
+            transition: transform 0.3s;
+        }
+
+        .skill-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+
+        .project-card {
+            background: #f8f8f8;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border: 2px solid var(--scroll);
+        }
+
+        .project-card h3 {
+            color: var(--orange);
+            margin-bottom: 1rem;
+        }
+
+        .project-card a {
+            display: inline-block;
+            margin-top: 1rem;
+            padding: 0.5rem 1rem;
+            background: var(--orange);
+            color: white;
+            text-decoration: none;
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+
+        .project-card a:hover {
+            background: var(--leaf-green);
+        }
+
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.8rem;
+            border: 2px solid var(--scroll);
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        .contact-form button {
+            padding: 1rem;
+            background: var(--orange);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s;
+        }
+
+        .contact-form button:hover {
+            background: var(--leaf-green);
+        }
+
+        footer {
+            text-align: center;
+            padding: 2rem;
+            background: var(--black);
+            color: white;
+            border-radius: 5px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: white;
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+            background: var(--orange);
+            border-radius: 3px;
+            transition: background 0.3s;
+        }
+
+        .social-links a:hover {
+            background: var(--leaf-green);
+        }
+
+        @media (max-width: 768px) {
+            .scroll-container {
+                margin: 1rem;
+                padding: 1rem;
+            }
+
+            section {
+                padding: 1rem;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header {
+                padding: 1rem;
+            }
+
+            h1 {
+                font-size: 1.5rem;
+            }
+
+            .social-links {
+                flex-direction: column;
+            }
+        }
+    </style>
+
+    <div class="scroll-container">
+        <header>
+            <h1>John Doe</h1>
+            <p>Ninja Way: Building the Future with Code</p>
+        </header>
+
+        <section id="about-me">
+            <h2>My Ninja Path</h2>
+            <p>John Doe is a skilled Machine Learning Engineer with expertise in building and deploying scalable AI solutions. He specializes in areas like [e.g., natural language processing or computer vision] and has experience with tools like Python, TensorFlow, and PyTorch. Passionate about solving real-world problems, John has worked on projects such as [e.g., recommendation systems or predictive models]. He thrives on innovation, continuous learning, and integrating AI into impactful applications</p>
+        </section>
+
+        <section id="skills">
+            <h2>Jutsu (Skills)</h2>
+            <div class="skills-grid">
+                
+                <div class="skill-item">ML</div>
+                
+                <div class="skill-item">Data Science</div>
+                
+                <div class="skill-item">Python</div>
+                
+                <div class="skill-item">R Programming</div>
+                
+                <div class="skill-item">NLP</div>
+                
+                <div class="skill-item">Jupyter</div>
+                
+                <div class="skill-item">Github</div>
+                
+                <div class="skill-item">Flask</div>
+                
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Missions Completed (Projects)</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3> Personalized Movie Recommendation System</h3>
+                    <p>A machine learning-powered web application that recommends movies based on user preferences and viewing history. Using collaborative filtering and cosine similarity, the system identifies patterns in user behavior to suggest highly relevant content. Built with Python, Streamlit, and a dataset from Kaggle, this project highlights expertise in data preprocessing, model implementation, and interactive UI design.</p>
+                    <a href="https://github.com" target="_blank">View Mission Details</a>
+                </div>
+                
+                <div class="project-card">
+                    <h3>AI-Powered Sentiment Analysis Tool</h3>
+                    <p>A robust sentiment analysis tool designed to analyze and classify text data into positive, negative, or neutral sentiments. Leveraging natural language processing (NLP) techniques with libraries like NLTK and Transformers, this project showcases skills in text preprocessing, model training, and API integration. The tool is optimized for real-time analysis, making it ideal for customer feedback and social media monitoring</p>
+                    <a href="https://github.com" target="_blank">View Mission Details</a>
+                </div>
+                
+            </div>
+        </section>
+
+        <section id="education">
+            <h2>Academy Training (Education)</h2>
+            <div class="project-card">
+                <h3>Master's in Machine Learning </h3>
+                <p><strong>Academy:</strong> IIT Akurdi</p>
+                <p><strong>Training Year:</strong> 2026</p>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Send a Message Scroll</h2>
+            <form class="contact-form" action="#" method="post">
+                <input type="text" name="name" placeholder="Your Name" required="">
+                <input type="email" name="email" placeholder="Your Email" required="">
+                <textarea name="message" rows="4" placeholder="Your Message" required=""></textarea>
+                <button type="submit">Send Message</button>
+            </form>
+        </section>
+
+        <footer>
+            <p>©  John Doe | All Rights Reserved</p>
+            <div class="social-links">
+                
+                <a href="tel:0000000000">📞 Phone</a>
+                
+                
+                <a href="mailto:john@gmail.com">📧 Email</a>
+                
+                
+                <a href="https://www.linkedin.com" target="_blank">💼 LinkedIn</a>
+                
+                
+                <a href="https://github.com" target="_blank">👨‍💻 GitHub</a>
+                
+            </div>
+        </footer>
+    </div>
+
+    
+
+    <script>
+        function downloadProfile() {
+            const profileBody = document.body.cloneNode(true);
+            const sidebar = profileBody.querySelector('.sidebar');
+            if (sidebar) {
+                sidebar.remove();
+            }
+
+            const profileHtml = `<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Shinobi Portfolio</title>
+            </head>
+            <body>
+                ${profileBody.innerHTML}
+            </body>
+            </html>`;
+
+            const blob = new Blob([profileHtml], { type: 'text/html' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'John Doe.html';
+            link.click();
+        }
+    </script>
+
+
+            </body>
+            </html>

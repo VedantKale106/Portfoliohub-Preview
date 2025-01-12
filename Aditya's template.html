@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Profile</title>
+            </head>
+            <body>
+                
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Poppins', Arial, sans-serif;
+            line-height: 1.8;
+            margin: 0;
+            padding: 0;
+            background-color: #e9ecef;
+            color: #343a40;
+            font-size: 18px;
+            overflow-x: hidden;
+            padding-bottom: 50px;
+        }
+
+        /* Header Styles */
+        header {
+            background: linear-gradient(135deg, #6a11cb, #2575fc);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 4rem;
+            letter-spacing: 2px;
+            font-weight: bold;
+        }
+
+        header p {
+            font-size: 1.8rem;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Portfolio Site Header */
+        .portfolio-header {
+            text-align: center;
+            padding: 2rem;
+            background-color: #f8f9fa;
+            border-bottom: 2px solid #6a11cb;
+        }
+
+        .portfolio-header h2 {
+            margin: 0;
+            color: #2575fc;
+            font-size: 2.8rem;
+        }
+
+        /* Container Styles */
+        .container {
+            width: 90%;
+            max-width: 1000px;
+            margin: 30px auto;
+            background: white;
+            padding: 3rem;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+        }
+
+        .container:hover,
+        .container:active {
+            transform: scale(1.05);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Section Titles */
+        h2 {
+            color: #2575fc;
+            font-size: 2.5rem;
+            margin-top: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 4px solid #6a11cb;
+            display: inline-block;
+            padding-bottom: 0.4rem;
+            text-transform: uppercase;
+        }
+
+        /* List Styles */
+        ul {
+            padding-left: 20px;
+        }
+
+        ul li {
+            margin-bottom: 1.5rem;
+            font-size: 1.2rem;
+        }
+
+        /* Links */
+        .links a {
+            display: inline-block;
+            color: #ffffff;
+            background-color: #2575fc;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            border-radius: 5px;
+            padding: 12px 24px;
+            transition: background-color .3s ease, transform .3s ease;
+        }
+
+        .links a:hover {
+            background-color: #6a11cb;
+        }
+
+        /* Project Links */
+        .container ul li a {
+            color: #6a11cb;
+        }
+
+        .container ul li a:hover {
+            text-decoration: underline;
+        }
+
+        /* Button Styling for Contact Links */
+        .links a.button {
+            background-color: #6a11cb;
+        }
+
+        .links a.button:hover {
+            background-color: #2575fc;
+        }
+
+        /* Contact Us Section Styles */
+        .contact-us {
+            text-align: center;
+            padding: 2.5rem;
+            background-color: #f8f9fa;
+            border-radius: 15px;
+            box-shadow: 0px 4px rgba(0, 0, 0, .1);
+            margin-bottom: 30px;
+        }
+
+        .contact-us input,
+        .contact-us textarea {
+            width: 80%;
+            padding: 12px;
+            margin-top: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: inset 0px -1px rgba(255, 255, 255, .4);
+            font-size: 18px;
+        }
+
+        .contact-us button {
+            width: 80%;
+            padding: 12px;
+            background-color: #2575fc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 10px;
+        }
+
+        .contact-us button:hover {
+            background-color: #6a11cb;
+        }
+
+        /* Footer Styles */
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 2.5rem 0;
+            position: relative;
+            width: 100%;
+            box-shadow: 0px -4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        footer p {
+            font-size: 1.4rem;
+            margin-bottom: 1.5rem;
+        }
+
+        footer .links {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-wrap: wrap;
+            margin-top: 1rem;
+        }
+
+        footer .links a {
+            color: white;
+            text-decoration: none;
+            margin: 0 20px;
+            font-size: 1.3rem;
+            transition: transform 0.3s ease, color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+        }
+
+        footer .links a:hover {
+            color: #6a11cb;
+            transform: translateY(-5px);
+        }
+
+        footer .links a i {
+            margin-right: 8px;
+            font-size: 1.5rem;
+        }
+
+        /* Footer Copyright */
+        footer .copyright {
+            font-size: 1.2rem;
+            margin-top: 20px;
+            opacity: 0.7;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 1024px) {
+            header h1 {
+                font-size: 3rem;
+            }
+
+            h2 {
+                font-size: 2rem;
+            }
+
+            ul li {
+                font-size: 1rem;
+            }
+
+            .links a {
+                font-size: 1rem;
+                padding: 10px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                width: 90%;
+                padding: 2rem;
+                margin: 20px;
+
+            }
+
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            h2 {
+                font-size: 1.8rem;
+            }
+
+            ul li {
+                font-size: 1rem;
+            }
+
+            .links a {
+                font-size: 1rem;
+                padding: 10px;
+            }
+
+            .contact-us input,
+            .contact-us textarea {
+                width: 90%;
+            }
+
+            .contact-us button {
+                width: 90%;
+            }
+
+            footer a {
+                font-size: 1rem;
+            }
+
+            .container ul {
+                display: grid;
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            h2 {
+                font-size: 1.6rem;
+            }
+
+            .links a {
+                font-size: 1rem;
+                padding: 8px;
+            }
+
+            footer a {
+                font-size: 0.9rem;
+            }
+
+            .contact-us input,
+            .contact-us textarea {
+                width: 95%;
+            }
+
+            .contact-us button {
+                width: 95%;
+            }
+
+            .container {
+                width: 100%;
+                padding: 1.5rem;
+            }
+
+            ul li {
+                font-size: 1rem;
+            }
+        }
+    </style>
+    <header>
+        <h1>John Doe</h1>
+    </header>
+
+    <!-- Portfolio Site Header -->
+    <div class="portfolio-header">
+         <h2>Welcome to My Portfolio</h2>
+         <p>Explore my work and skills!</p>
+     </div>
+
+    <!-- About Me Section -->
+    <div class="container">
+         <h2>About Me</h2>
+         <p>John Doe is a skilled Machine Learning Engineer with expertise in building and deploying scalable AI solutions. He specializes in areas like [e.g., natural language processing or computer vision] and has experience with tools like Python, TensorFlow, and PyTorch. Passionate about solving real-world problems, John has worked on projects such as [e.g., recommendation systems or predictive models]. He thrives on innovation, continuous learning, and integrating AI into impactful applications</p>
+     </div>
+
+    <!-- Skills Section -->
+    <div class="container">
+         <h2>Skills</h2>
+         <ul>
+             
+                 <li>ML</li>
+             
+                 <li>Data Science</li>
+             
+                 <li>Python</li>
+             
+                 <li>R Programming</li>
+             
+                 <li>NLP</li>
+             
+                 <li>Jupyter</li>
+             
+                 <li>Github</li>
+             
+                 <li>Flask</li>
+             
+         </ul>
+     </div>
+
+    <!-- Projects Section -->
+    <div class="container">
+         <h2>Projects</h2>
+         <ul>
+             
+                 <li>
+                     <strong> Personalized Movie Recommendation System</strong><br>
+                     <em>A machine learning-powered web application that recommends movies based on user preferences and viewing history. Using collaborative filtering and cosine similarity, the system identifies patterns in user behavior to suggest highly relevant content. Built with Python, Streamlit, and a dataset from Kaggle, this project highlights expertise in data preprocessing, model implementation, and interactive UI design.</em><br>
+                     <a href="https://github.com" target="_blank">Project Link</a>
+                 </li>
+             
+                 <li>
+                     <strong>AI-Powered Sentiment Analysis Tool</strong><br>
+                     <em>A robust sentiment analysis tool designed to analyze and classify text data into positive, negative, or neutral sentiments. Leveraging natural language processing (NLP) techniques with libraries like NLTK and Transformers, this project showcases skills in text preprocessing, model training, and API integration. The tool is optimized for real-time analysis, making it ideal for customer feedback and social media monitoring</em><br>
+                     <a href="https://github.com" target="_blank">Project Link</a>
+                 </li>
+             
+         </ul>
+     </div>
+
+    <!-- Education Section -->
+    <div class="container">
+         <h2>Education</h2>
+         <p><strong>Course:</strong> Master's in Machine Learning </p>
+         <p><strong>College:</strong> IIT Akurdi</p>
+         <p><strong>Year:</strong> 2026</p>
+     </div>
+
+    <!-- Contact Us Section -->
+    <div class="container contact-us">
+         <h2>Contact Us</h2>
+         <form action="#" method="post">
+             <input type="text" name="name" placeholder="Your Name" required="">
+             <input type="email" name="email" placeholder="Your Email" required="">
+             <textarea name="message" rows="4" placeholder="Your Message" required=""></textarea>
+             <button type="submit">Send Message</button>
+         </form>
+     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p class="copyright">©  John Doe | All Rights Reserved</p>
+        <div class="links">
+            
+                <a href="https://www.linkedin.com" target="_blank">
+                    <i class="fab fa-linkedin"></i> LinkedIn
+                </a>
+            
+            
+                <a href="https://github.com" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            
+        </div>
+    </footer>
+
+     <!-- Floating Sidebar -->
+
+
+<script>
+    function downloadProfile() {
+        // Clone the document's body to avoid modifying the original DOM
+        const profileBody = document.body.cloneNode(true);
+        
+        // Remove the sidebar from the cloned body
+        const sidebar = profileBody.querySelector('.sidebar');
+        if (sidebar) {
+            sidebar.remove();  // Remove the sidebar in the clone
+        }
+
+        // Convert the modified body to HTML and create a downloadable blob
+        const profileHtml = `<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Profile</title>
+            </head>
+            <body>
+                ${profileBody.innerHTML}
+            </body>
+            </html>`;
+
+        const blob = new Blob([profileHtml], { type: 'text/html' });
+        const link = document.createElement('a');
+        link.href = URL.createObjectURL(blob);
+        link.download = 'profile.html';
+        link.click();
+    }
+</script>
+
+
+            </body>
+            </html>

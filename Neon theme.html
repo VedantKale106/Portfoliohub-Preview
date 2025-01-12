@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Profile</title>
+            </head>
+            <body>
+                
+    <style>
+        /* Core styles */
+        :root {
+            --neon-primary: #00f0ff;
+            --neon-secondary: #ff00ff;
+            --bg-dark: #121212;
+            --bg-darker: #0a0a0a;
+            --text-light: #fff;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+        }
+
+        /* Simplified neon effect */
+        .neon-text {
+            color: var(--neon-primary);
+            text-shadow: 0 0 10px var(--neon-primary);
+        }
+
+        /* Layout */
+        header {
+            background-color: var(--bg-darker);
+            padding: 2rem 1rem;
+            text-align: center;
+        }
+
+        header h1 {
+            font-size: clamp(2rem, 5vw, 3rem);
+        }
+
+        section {
+            padding: 2rem 1rem;
+            margin: 1rem auto;
+            max-width: 1200px;
+        }
+
+        h2 {
+            color: var(--neon-secondary);
+            margin-bottom: 1rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
+        }
+
+        /* Skills grid */
+        .skills-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skills-list li {
+            background-color: #333;
+            padding: 0.75rem;
+            border-radius: 4px;
+            text-align: center;
+            border: 1px solid var(--neon-primary);
+        }
+
+        /* Projects */
+        .projects-list {
+            display: grid;
+            gap: 1.5rem;
+            padding: 0;
+            list-style: none;
+        }
+
+        .project-card {
+            background-color: #333;
+            padding: 1.5rem;
+            border-radius: 4px;
+            border: 1px solid var(--neon-primary);
+        }
+
+        .project-card a {
+            color: var(--neon-primary);
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 0.5rem;
+        }
+
+        /* Contact form */
+        .contact-form {
+            display: grid;
+            gap: 1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            padding: 0.75rem;
+            background-color: #333;
+            border: 1px solid #444;
+            border-radius: 4px;
+            color: var(--text-light);
+            width: 100%;
+        }
+
+        .contact-form button {
+            padding: 0.75rem;
+            background-color: var(--neon-primary);
+            color: var(--bg-dark);
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--bg-darker);
+            padding: 1.5rem;
+            text-align: center;
+            margin-top: 2rem;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .social-links a {
+            color: var(--neon-primary);
+            text-decoration: none;
+        }
+
+        /* Download button */
+        .download-btn {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background-color: var(--neon-secondary);
+            color: var(--text-light);
+            padding: 0.75rem 1.5rem;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+
+        @media (max-width: 768px) {
+            section {
+                padding: 1.5rem 1rem;
+            }
+
+            .download-btn {
+                bottom: 1rem;
+                right: 1rem;
+                padding: 0.5rem 1rem;
+            }
+        }
+    </style>
+    <header>
+        <h1 class="neon-text">John Doe</h1>
+        <p>Welcome to My Portfolio</p>
+    </header>
+
+    <section id="about">
+        <h2 class="neon-text">About Me</h2>
+        <p>John Doe is a skilled Machine Learning Engineer with expertise in building and deploying scalable AI solutions. He specializes in areas like [e.g., natural language processing or computer vision] and has experience with tools like Python, TensorFlow, and PyTorch. Passionate about solving real-world problems, John has worked on projects such as [e.g., recommendation systems or predictive models]. He thrives on innovation, continuous learning, and integrating AI into impactful applications</p>
+    </section>
+
+    <section id="skills">
+        <h2 class="neon-text">Skills</h2>
+        <ul class="skills-list">
+            
+            <li>ML</li>
+            
+            <li>Data Science</li>
+            
+            <li>Python</li>
+            
+            <li>R Programming</li>
+            
+            <li>NLP</li>
+            
+            <li>Jupyter</li>
+            
+            <li>Github</li>
+            
+            <li>Flask</li>
+            
+        </ul>
+    </section>
+
+    <section id="projects">
+        <h2 class="neon-text">Projects</h2>
+        <ul class="projects-list">
+            
+            <li class="project-card">
+                <h3> Personalized Movie Recommendation System</h3>
+                <p>A machine learning-powered web application that recommends movies based on user preferences and viewing history. Using collaborative filtering and cosine similarity, the system identifies patterns in user behavior to suggest highly relevant content. Built with Python, Streamlit, and a dataset from Kaggle, this project highlights expertise in data preprocessing, model implementation, and interactive UI design.</p>
+                <a href="https://github.com" target="_blank">View Project →</a>
+            </li>
+            
+            <li class="project-card">
+                <h3>AI-Powered Sentiment Analysis Tool</h3>
+                <p>A robust sentiment analysis tool designed to analyze and classify text data into positive, negative, or neutral sentiments. Leveraging natural language processing (NLP) techniques with libraries like NLTK and Transformers, this project showcases skills in text preprocessing, model training, and API integration. The tool is optimized for real-time analysis, making it ideal for customer feedback and social media monitoring</p>
+                <a href="https://github.com" target="_blank">View Project →</a>
+            </li>
+            
+        </ul>
+    </section>
+
+    <section id="education">
+        <h2 class="neon-text">Education</h2>
+        <div class="project-card">
+            <p><strong>Course:</strong> Master's in Machine Learning </p>
+            <p><strong>College:</strong> IIT Akurdi</p>
+            <p><strong>Year:</strong> 2026</p>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2 class="neon-text">Contact Me</h2>
+        <form class="contact-form">
+            <input type="text" placeholder="Your Name" required="">
+            <input type="email" placeholder="Your Email" required="">
+            <textarea placeholder="Your Message" rows="5" required=""></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>© John Doe | Portfolio</p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com">LinkedIn</a>
+            <a href="https://github.com">GitHub</a>
+            <a href="john@gmail.com">Email</a>
+        </div>
+    </footer>
+
+    
+
+    <script>
+        function downloadProfile() {
+            // Clone the document's body to avoid modifying the original DOM
+            const profileBody = document.body.cloneNode(true);
+
+            // Remove the sidebar from the cloned body
+            const sidebar = profileBody.querySelector('.sidebar');
+            if (sidebar) {
+                sidebar.remove();  // Remove the sidebar in the clone
+            }
+
+            // Convert the modified body to HTML and create a downloadable blob
+            const profileHtml = `<!DOCTYPE html>
+            <html lang="en">
+            <head>
+                <meta charset="UTF-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1.0">
+                <title>Profile</title>
+            </head>
+            <body>
+                ${profileBody.innerHTML}
+            </body>
+            </html>`;
+
+            const blob = new Blob([profileHtml], { type: 'text/html' });
+            const link = document.createElement('a');
+            link.href = URL.createObjectURL(blob);
+            link.download = 'profile.html';
+            link.click();
+        }
+    </script>
+
+
+            </body>
+            </html>
